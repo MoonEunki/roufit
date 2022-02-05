@@ -51,26 +51,3 @@ class Root extends GetView<RootController> {
     );
   }
 }
-
-// bottomNavigationBar: Obx(
-//   () => BottomNavigationBar(
-//     type: BottomNavigationBarType.fixed,
-//     items: const [
-//       BottomNavigationBarItem(
-//         icon: Icon(Icons.home),
-//         label: 'Home',
-//       ),
-//       BottomNavigationBarItem(
-//         icon: Icon(Icons.all_inclusive),
-//         label: 'Routine',
-//       ),
-//       BottomNavigationBarItem(
-//         icon: Icon(Icons.accessibility),
-//         label: 'Workout',
-//       ),
-//       BottomNavigationBarItem(
-//         icon: Icon(Icons.settings),
-//         label: 'Settings',
-//       ),
-//     ],
-//   ),
