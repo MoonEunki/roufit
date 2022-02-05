@@ -1,69 +1,54 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:roufit/src/controller/root_controller.dart';
+import 'package:roufit/src/root.dart';
+// GetMaterialApp(home: MyApp())
 
-void main() => runApp(GetMaterialApp(home: MyApp()));
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return LandingPage();
-  }
-}
-
-class TabController extends GetxController {
-  var currentTabIndex = 0.obs;
-  changeTab(int index) => {currentTabIndex.value = index};
-
-  var pageList = const [
-    HomePage(),
-    RoutinePage(),
-    WorkoutPage(),
-    SettingsPage(),
-  ];
-}
-
-class LandingPage extends StatelessWidget {
-  const LandingPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final TabController c = Get.put(TabController());
-    return Scaffold(
-      appBar: AppBar(title: Text("Test")),
-      body: SafeArea(
-        child: Obx(() => c.pageList[c.currentTabIndex.value]),
-      ),
-      bottomNavigationBar: Obx(
-        () => BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.all_inclusive),
-              label: 'Routine',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.accessibility),
-              label: 'Workout',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              label: 'Settings',
-            ),
-          ],
-          currentIndex: c.currentTabIndex.value,
-          selectedItemColor: Colors.blue[500],
-          onTap: c.changeTab,
-        ),
-      ),
+    return GetMaterialApp(
+      title: 'roufit',
+      initialBinding: BindingsBuilder(() {
+        Get.put(RootController());
+      }),
+      home: const Root(),
     );
   }
 }
+
+// class TabController extends GetxController {
+//   var currentTabIndex = 0.obs;
+//   changeTab(int index) => {currentTabIndex.value = index};
+
+//   var pageList = const [
+//     HomePage(),
+//     RoutinePage(),
+//     WorkoutPage(),
+//     SettingsPage(),
+//   ];
+// }
+
+// class LandingPage extends StatelessWidget {
+//   const LandingPage({Key? key}) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     final TabController c = Get.put(TabController());
+//     return Scaffold(
+//       appBar: AppBar(title: Text("Test")),
+//       body: SafeArea(
+//         child: Obx(() => c.pageList[c.currentTabIndex.value]),
+//       ),
+
+//       ),
+//     );
+//   }
+// }
 
 // class landingPageController extends GetxController {
 // static landingPageController get to => Get.find();
@@ -298,54 +283,3 @@ class LandingPage extends StatelessWidget {
 //   }
 // }
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text('HomePage'),
-      ),
-    );
-  }
-}
-
-class RoutinePage extends StatelessWidget {
-  const RoutinePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text('RoutinePage'),
-      ),
-    );
-  }
-}
-
-class WorkoutPage extends StatelessWidget {
-  const WorkoutPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text('WorkoutPage'),
-      ),
-    );
-  }
-}
-
-class SettingsPage extends StatelessWidget {
-  const SettingsPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text('SettingsPage'),
-      ),
-    );
-  }
-}
