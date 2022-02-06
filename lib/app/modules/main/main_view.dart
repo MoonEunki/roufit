@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:roufit/src/controller/root_controller.dart';
-import 'package:roufit/src/pages/home/home.dart';
-import 'package:roufit/src/pages/routine/routine.dart';
-import 'package:roufit/src/pages/workout/workout.dart';
-import 'package:roufit/src/pages/settings/settings.dart';
+import 'package:roufit/app/modules/home/home.dart';
+import 'package:roufit/app/modules/main/main_controller.dart';
+import 'package:roufit/app/modules/routine/routine.dart';
+import 'package:roufit/app/modules/settings/settings_view.dart';
+import 'package:roufit/app/modules/workout/workout.dart';
 
-class Root extends GetView<RootController> {
-  const Root({Key? key}) : super(key: key);
-
+class MainView extends GetView<MainController> {
   @override
   Widget build(BuildContext context) {
     return Obx(
@@ -16,17 +14,14 @@ class Root extends GetView<RootController> {
         appBar: AppBar(title: Text('Root')),
         body: IndexedStack(
           index: controller.rootPageIndex.value,
-          children: const [
-            Home(),
-            Routine(),
-            Workout(),
-            Settings(),
-          ],
+          children: [Home(), Routine(), Workout(), SettingsView()],
         ),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: controller.rootPageIndex.value,
           type: BottomNavigationBarType.fixed,
           selectedItemColor: Colors.blue[500],
+          // unselectedItemColor: Colors.blue[100],
+          // backgroundColor: Colors.white,
           onTap: controller.changeRootPageIndex,
           items: const [
             BottomNavigationBarItem(

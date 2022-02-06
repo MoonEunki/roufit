@@ -1,5 +1,5 @@
 class AppRoutes {
-  static const HOME = '/home';
+  static const Auth = '/auth';
   static const LOGIN = '/login';
-  static const WELCOME = '/welcome';
+  static const MAIN = '/main';
 }

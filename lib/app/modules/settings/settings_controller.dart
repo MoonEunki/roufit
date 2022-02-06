@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-import 'package:roufit/app/modules/home/home_controller.dart';
+import 'package:roufit/app/modules/auth/auth_controller.dart';
 
-class WelcomeController extends GetxController {
-  HomeController homeController = Get.find<HomeController>();
+class SettingsController extends GetxController {
+  AuthController authController = Get.find<AuthController>();
   late User user;
   @override
   void onInit() async {
@@ -20,7 +20,7 @@ class WelcomeController extends GetxController {
   void onClose() {}
 
   void logout() async {
-    await homeController.googleSign.disconnect();
-    await homeController.firebaseAuth.signOut();
+    await authController.googleSign.disconnect();
+    await authController.firebaseAuth.signOut();
   }
 }

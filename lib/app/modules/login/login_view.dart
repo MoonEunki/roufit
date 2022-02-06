@@ -9,9 +9,18 @@ class LoginView extends GetView<LoginController> {
       body: SafeArea(
         child: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              ElevatedButton(child: Text('구글로그인'), onPressed: () => controller.login()),
+              Container(
+                child: Text('Roufit', style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold)),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text('3초만에 roufit 로그인!'),
+                  ElevatedButton(child: Text('구글로그인하기'), onPressed: () => controller.login()),
+                ],
+              )
             ],
           ),
         ),

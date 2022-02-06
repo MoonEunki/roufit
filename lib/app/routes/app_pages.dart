@@ -1,20 +1,20 @@
 import 'package:get/get.dart';
-import 'package:roufit/app/modules/home/home_binding.dart';
-import 'package:roufit/app/modules/home/home_view.dart';
+import 'package:roufit/app/modules/auth/auth_binding.dart';
+import 'package:roufit/app/modules/auth/auth_view.dart';
 import 'package:roufit/app/modules/login/login_binding.dart';
 import 'package:roufit/app/modules/login/login_view.dart';
-import 'package:roufit/app/modules/welcome/welcome_binding.dart';
-import 'package:roufit/app/modules/welcome/welcome_view.dart';
+import 'package:roufit/app/modules/main/main_binding.dart';
+import 'package:roufit/app/modules/main/main_view.dart';
 import 'package:roufit/app/routes/app_routes.dart';
 
 class AppPages {
-  static const INITIAL = AppRoutes.HOME;
+  static const INITIAL = AppRoutes.Auth;
 
   static final List<GetPage> pages = [
     GetPage(
-      name: AppRoutes.HOME,
-      page: () => HomeView(),
-      binding: HomeBinding(),
+      name: AppRoutes.Auth,
+      page: () => AuthView(),
+      binding: AuthBinding(),
       // transition: Transition.rightToLeft,
     ),
     GetPage(
@@ -24,9 +24,9 @@ class AppPages {
       // transition: Transition.rightToLeft,
     ),
     GetPage(
-      name: AppRoutes.WELCOME,
-      page: () => WelcomeView(),
-      binding: WelcomeBinding(),
+      name: AppRoutes.MAIN,
+      page: () => MainView(),
+      binding: MainBinding(),
       // transition: Transition.rightToLeft,
     ),
   ];

@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:roufit/app/modules/home/home_binding.dart';
+import 'package:roufit/app/modules/auth/auth_binding.dart';
 import 'package:roufit/app/routes/app_pages.dart';
 
 Future main() async {
@@ -11,7 +11,7 @@ Future main() async {
   //Firebase 초기화
   await Firebase.initializeApp();
 
-  HomeBinding().dependencies();
+  AuthBinding().dependencies();
 
   runApp(GetMaterialApp(
     title: 'roufit',
