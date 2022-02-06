@@ -1,11 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:roufit/google_sign_in.dart';
+import 'package:roufit/app/modules/welcome/welcome_controller.dart';
 
-class LoggedInWidget extends StatelessWidget {
-  final user = FirebaseAuth.instance.currentUser!;
-
+class WelcomeView extends GetView<WelcomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,8 +14,7 @@ class LoggedInWidget extends StatelessWidget {
           TextButton(
             child: const Text('로그아웃', style: TextStyle(color: Colors.white)),
             onPressed: () async {
-              final GoogleSignInController controller = Get.find();
-              controller.googleLogout();
+              controller.logout();
             },
           ),
         ],
@@ -28,12 +25,12 @@ class LoggedInWidget extends StatelessWidget {
           children: [
             const Text('Profile', style: TextStyle(fontSize: 24)),
             CircleAvatar(
-              radius: 50,
-              backgroundImage: NetworkImage(user.photoURL!),
+              radius: 70,
+              backgroundImage: NetworkImage(controller.user.photoURL!),
             ),
-            Text(user.displayName!),
-            Text(user.email!),
-            Text(user.uid),
+            Text('Display Name : ${controller.user.displayName}'),
+            Text(controller.user.email!),
+            Text(controller.user.uid),
           ],
         ),
       ),
