@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "103822533226",
+    "project_id": "roufit-5b30e",
+    "storage_bucket": "roufit-5b30e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:103822533226:android:0f4a30d45b278f966c2013",
+        "android_client_info": {
+          "package_name": "com.doubleh.roufit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "103822533226-97lffctuve702ec9bom0dlc1gh6eqdrv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.doubleh.roufit",
+            "certificate_hash": "2220727f93f564afd455b49a95c7eca2bc4bcca1"
+          }
+        },
+        {
+          "client_id": "103822533226-jgnp4rumab37lkjrg7hj3dea7m81bpjr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFOl5V0Q2NVmxEVLew2h4_CuQmMKqaxtk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "103822533226-jgnp4rumab37lkjrg7hj3dea7m81bpjr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
